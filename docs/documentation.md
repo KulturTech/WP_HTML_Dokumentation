@@ -80,5 +80,5 @@ Die Verschachtelung funktioniert so:
   <div>…Inhalt…</div>                 
 </details>
 ```
-Die Regel lautet: Das erste <summary> innerhalb eines <details> ist die Beschriftung, alle übrigen Kindelemente bilden den Inhalt.
+Die Regel lautet: Das erste "summary" innerhalb eines "details" ist die Beschriftung, alle übrigen Kindelemente bilden den Inhalt.
 
