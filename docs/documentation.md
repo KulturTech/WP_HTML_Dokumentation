@@ -1,8 +1,3 @@
-{
-    title: Documentation
-    author: Sera Ria Gomes
-    date: 27.08.2026
-    }
 
 # Hintergrund
 
