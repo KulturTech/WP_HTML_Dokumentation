@@ -3,7 +3,7 @@
 
 Wir haben auf unserer Webseite versucht, Kärtchen zu erstellen, um Problem Storys zur Datenqualität darzustellen. Die Kärtchen sind aufklappbar und enthalten Lösungen zu den jeweiligen Problem Storys. Allerdings war ist nicht möglich mit einem normalen HTML Programm zu arbeiten, da wir eine Wordpress Seite haben. Um die gängigen Styles einzubauen, müsste man Extensions kaufen, die nicht Open-Source sind. Wir arbeiten schon mit mehreren Extensions, die immer wieder aktualisiert werden müssen, deswegen habe ich einen Workaround gefunden, um die Anwendung in unsere Wordpress Seite einzubauen. Es gibt viele solche Workarounds, aber es hängt davon ab, was für einen Format ihr euch wünscht. In dieser Dokumentation beschreibe ich wie wir die Kärtchen einbauen konnten. 
 Um den Code einzubauen, müsst ihr auf der Seite, die ihr bearbeitet, einen Block anlegen. In diesem Block, klickt ihr auch **individuelles HTML**. Ihr könnt den Quellcode von hier kopieren und in den Block einfügen.
-![html-block](img\Screenshot 2026-08-27 112056.png)
+![HTML-Block](../img/Screenshot%202026-08-27%20112056.png)
 
 # Styles
 
@@ -21,7 +21,7 @@ Wie ihr seht, habe ich in den **div classes** den Font und Farbe des obersten Bl
 <div style="border-top:5px solid #004F6E;border-right:1px solid #D7DEE1;border-bottom:1px solid #D7DEE1;border-left:1px solid #D7DEE1;border-radius:4px;background-color:#FFFFFF;padding:26px 28px 28px;margin:0 0 26px">;
 ```
 
-Für Inline Styles müsst die Styles in den Code einbauen, wenn ihr auf Wordpress eine HTML-Anwendung einbetten möchtet. Ansonsten braucht ihr eine CSS Extension oder ihr seht den rohen Code auf der Seite, wenn ihr sie veröffentlicht. Die Styles sind die größten Hürden, wenn man einen individuellen HTML Codeblock einbettet.
+Für Inline Styles müsst ihr die Styles in den Code einbauen, wenn ihr auf Wordpress eine HTML-Anwendung einbetten möchtet. Ansonsten braucht ihr eine CSS Extension oder ihr seht den rohen Code auf der Seite, wenn ihr sie veröffentlicht. Die Styles sind die größten Hürden, wenn man einen individuellen HTML Codeblock einbettet.
 
 Die Styles habe ich wieder in den Absätzen verwendet. Mit *<p style>*
 ```html
