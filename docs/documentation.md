@@ -1,7 +1,7 @@
 
 # Hintergrund
 
-Wir haben auf unserer Webseite versucht, Kärtchen zu erstellen, um Problem Storys und deren Lösungen zur Datenqualität darzustellen. Die Kärtchen sind aufklappbar und enthalten Lösungen zu den jeweiligen Problem Storys. Allerdings war ist nicht möglich mit einem normalen HTML Programm zu arbeiten, da wir eine Wordpress Seite haben. Um die gängigen Styles einzubauen, müsste man Extensions kaufen, die nicht Open-Source sind. Wir arbeiten schon mit mehreren Extensions, die immer wieder aktualisiert werden müssen, deswegen habe ich einen Workaround gefunden, um die Anwendung in unsere Wordpress Seite einzubauen. Es gibt viele solche Workarounds, aber es hängt davon ab, was für einen Format ihr euch wünscht. In dieser Dokumentation beschreibe ich wie wir die Kärtchen einbauen konnten. 
+Wir haben auf unserer Webseite versucht, Kärtchen zu erstellen, um Problem Storys und deren Lösungen zur Datenqualität darzustellen. Die Kärtchen sind aufklappbar und enthalten Lösungen zu den jeweiligen Problem Storys. Allerdings war es nicht möglich mit einem normalen HTML Programm zu arbeiten, da wir eine Wordpress Seite haben. Um die gängigen Styles einzubauen, müsste man Extensions kaufen, die nicht Open-Source sind. Wir arbeiten schon mit mehreren Extensions, die immer wieder aktualisiert werden müssen, deswegen habe ich einen Workaround gefunden, um die Anwendung in unsere Wordpress Seite einzubauen, d.h. *drum rolls* inline-embed. Es gibt viele solche Workarounds, aber es hängt davon ab, was für einen Format ihr euch wünscht. In dieser Dokumentation beschreibe ich wie wir die Kärtchen einbauen konnten. 
 Um den Code einzubauen, müsst ihr auf der Seite, die ihr bearbeitet, einen Block anlegen. In diesem Block, klickt ihr auch **individuelles HTML**. Ihr könnt den Quellcode von hier kopieren und in den Block einfügen.
 ![HTML-Block](../img/Screenshot%202026-08-27%20112056.png)
 
@@ -114,5 +114,21 @@ Die Regel lautet: Das erste <summary> innerhalb eines <details> ist die Beschrif
 Beim Klick setzt der Browser das Attribut open auf das <details> und blendet den Rest ein. Genau daran wollten wir früher den Textwechsel „Weiterlesen / Weniger anzeigen" festmachen – details[open] – was ohne Stylesheet nicht ging.
 
 Das cursor:pointer im style des <summary> ist reine Kosmetik: Es macht aus dem Textcursor einen Zeigefinger. Klickbar wäre das Element auch ohne.
+
+# Die Kapitel-Chips oben
+
+Die sehen wie Buttons aus, sind aber gewöhnliche Links. Verknüpft wird über den Fragmentbezeichner: 
+
+``` html
+<a href="#kapitel-1">Qualitätskontrolle 1</a>   
+…
+<h2 id="kapitel-1">1. Qualitätskontrolle</h2>
+```
+Der Text nach der Raute muss exakt dem id-Wert entsprechen, Groß- und Kleinschreibung inklusive. Der Button-Look entsteht allein durch display:inline-block plus border, padding und border-radius – ein <a> ist standardmäßig inline und würde padding sonst nur unsauber darstellen.
+
+Nach demselben Prinzip arbeiten auch die Schlagwörter (#tag-dokumentation) und die Nummern-Chips im Register (#ps-1-1). Alle drei Verweisarten sind reine Anker – deshalb überstehen sie die KSES-Filterung, die dir <style> weggeputzt hat.
+
+
+
 
 
