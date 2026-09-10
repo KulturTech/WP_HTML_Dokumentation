@@ -5,11 +5,11 @@ Wir haben auf unserer Webseite versucht, Kärtchen zu erstellen, um Problem Stor
 Um den Code einzubauen, müsst ihr auf der Seite, die ihr bearbeitet, einen Block anlegen. In diesem Block, klickt ihr auch **individuelles HTML**. Ihr könnt den Quellcode von hier kopieren und in den Block einfügen.
 ![HTML-Block](../img/Screenshot%202026-08-27%20112056.png)
 
-In dem Code gibt es ein Document-Object-Model (DOM). HTML ist eine statische Auszeichungssprache un ist nicht objektorientiert, d.h. es gibt kein klassisches Klassen-Objekt Modell. Es wird von dem Browser ins DOM umgewandelt. Das Objekt wäre also "div" oder "details" und die Objekte und jede Section der Seite hat eine "Section Class" wie z.B die Fußnoten. Es ist wichtig zu verstehen, wie das DOM funktioniert, damit man auch versteht, wie Seiten strukturiert werden.
+In dem Code gibt es ein Document-Object-Model (DOM). HTML ist eine statische Auszeichungssprache und ist nicht objektorientiert, d.h. es gibt kein klassisches Klassen-Objekt Modell. Es wird von dem Browser ins DOM umgewandelt. Das Objekt wäre also `<div>` oder `<details>` und die Objekte und jede Section der Seite hat eine `<Section Class>` wie z.B die Fußnoten. Es ist wichtig zu verstehen, wie das DOM funktioniert, damit man auch versteht, wie Seiten strukturiert werden.
 
 ## 1. Warum die Datei so aussieht, wie sie aussieht
  
-Die Seite ist ein einziger Block Individuelles HTML in WordPress. Das hat einen Grund: In WordPress dürfen nur Administrator*innen sogenannte Stylesheets speichern – also ausgelagerte Gestaltungsanweisungen. Bei allen anderen Rollen werden sie beim Speichern kommentarlos entfernt (die Funktion dahinter heißt KSES).
+Die Seite ist ein einziger Block Individuelles HTML in WordPress. Das hat einen Grund: In WordPress dürfen nur Administrator*innen sogenannte Stylesheets speichern – also ausgelagerte Gestaltungsanweisungen. Bei allen anderen Rollen werden sie beim Speichern kommentarlos entfernt (die Funktion dahinter heißt KSES). Wir ihr wisst, habe ich keine Admin-Rechte. Diese Dokumentation richtet sich eher an Menschen, die keine Admin-Rechte haben und deren Spielraum deswegen eingeschränkt ist. 
  
 Daraus folgen drei Eigenheiten, die beim Lesen des Codes zunächst irritieren:
  
