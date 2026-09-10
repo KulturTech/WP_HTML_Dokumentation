@@ -1,7 +1,7 @@
 
 # Hintergrund
 
-Wir haben auf unserer Webseite versucht, Kärtchen zu erstellen, um Problem Storys und deren Lösungen zur Datenqualität darzustellen. Die Kärtchen sind aufklappbar und enthalten Lösungen zu den jeweiligen Problem Storys. Allerdings war es nicht möglich mit einem normalen HTML Programm zu arbeiten, da wir eine Wordpress Seite haben. Um die gängigen Styles einzubauen (Inline-Embed), müsste man Extensions kaufen, die nicht Open-Source sind. Wir arbeiten schon mit mehreren Extensions, die immer wieder aktualisiert werden müssen, deswegen habe ich einen Workaround gefunden, um die Anwendung in unsere Wordpress Seite einzubauen. Es gibt viele solche Workarounds, aber es hängt davon ab, was für einen Format ihr euch wünscht. In dieser Dokumentation beschreibe ich wie wir die Kärtchen einbauen konnten. 
+Wir haben auf unserer Webseite versucht, Kärtchen zu erstellen, um Problem Storys und deren Lösungen zur Datenqualität darzustellen. Die Kärtchen sind aufklappbar und enthalten Lösungen zu den jeweiligen Problem Storys. Allerdings war ist nicht möglich mit einem normalen HTML Programm zu arbeiten, da wir eine Wordpress Seite haben. Um die gängigen Styles einzubauen, müsste man Extensions kaufen, die nicht Open-Source sind. Wir arbeiten schon mit mehreren Extensions, die immer wieder aktualisiert werden müssen, deswegen habe ich einen Workaround gefunden, um die Anwendung in unsere Wordpress Seite einzubauen. Es gibt viele solche Workarounds, aber es hängt davon ab, was für einen Format ihr euch wünscht. In dieser Dokumentation beschreibe ich wie wir die Kärtchen einbauen konnten. 
 Um den Code einzubauen, müsst ihr auf der Seite, die ihr bearbeitet, einen Block anlegen. In diesem Block, klickt ihr auch **individuelles HTML**. Ihr könnt den Quellcode von hier kopieren und in den Block einfügen.
 ![HTML-Block](../img/Screenshot%202026-08-27%20112056.png)
 
@@ -23,7 +23,7 @@ Wie ihr seht, habe ich in den **div classes** den Font und Farbe des obersten Bl
 <div style="border-top:5px solid #004F6E;border-right:1px solid #D7DEE1;border-bottom:1px solid #D7DEE1;border-left:1px solid #D7DEE1;border-radius:4px;background-color:#FFFFFF;padding:26px 28px 28px;margin:0 0 26px">;
 ```
 
-Für Inline Styles müsst ihr die Styles in den Code einbauen, wenn ihr auf Wordpress eine HTML-Anwendung einbetten möchtet. Ansonsten braucht ihr eine CSS Extension oder ihr seht den rohen Code auf der Seite, wenn ihr sie veröffentlicht. Die Styles sind die erste Hürde, wenn man einen individuellen HTML Codeblock einbettet.
+Für Inline Styles müsst ihr die Styles in den Code einbauen, wenn ihr auf Wordpress eine HTML-Anwendung einbetten möchtet. Ansonsten braucht ihr eine CSS Extension oder ihr seht den rohen Code auf der Seite, wenn ihr sie veröffentlicht. Die Styles sind die größten Hürden, wenn man einen individuellen HTML Codeblock einbettet.
 
 Die Styles habe ich wieder in den Absätzen verwendet. Mit *<p style>*
 ```html
@@ -36,7 +36,7 @@ Die Styles habe ich wieder in den Absätzen verwendet. Mit *<p style>*
 
 # Filter System
 
-Ein Feature unserer Seite ist natürlich das Filtersystem. Ich habe jedes Problem nach Farbe kodiert und mit die Problem Storys dementsprechend kategorisiert. Die "a href" Zeilen sind Chips, die die Kapitelnr mit dem Kindelement verknüpft. Die Chips sind also die Anker.
+Ein Feature unserer Seite ist natürlich das Filtersystem. Ich habe jedes Problem nach Farbe kodiert und mit die Problem Storys dementsprechend kategorisiert.
 
 ```html
 <p style="margin:0 0 26px">
@@ -66,27 +66,53 @@ Jetzt müssen wir die Kärtchen mit den Buttons verknüpfen. Das funktioniert so
 </div>
 ```
 
-# Die Kärtchen 
+# Die Verschachtelung 
 
-Die Verknüpfung funktioniert so:
-```html
-<a href="#kapitel-1">Qualitätskontrolle 1</a>  
-…
-<h2 id="kapitel-1">1. Qualitätskontrolle</h2>   
+Ein Feature des Codes ist die Verschachtelung im Rahmen des DOM. Der Block besteht aus vier ineinandergeschachtelten Ebenen:
+
+``` html
+<h2 id="kapitel-1">          
+<div display:flex>           
+  └ <div id="ps-1-1">        
+      ├ Kopf: Nummer, Rubrik, Titel
+      ├ Problembeschreibung
+      └ <div margin-top:auto> 
+          ├ Datenqualitätsproblem
+          └ <details>
 ```
-Es gibt keine Verknüpfung im technischen Sinne. Hier habe ich einen Baum aufgebaut mit Verschachtelungen. Die Zeile mit "a href" ist der Eltenteil und das Kind wäre das Heading. "a href" funktioniert wie einen Anker. Es ist ein Chip, der ein Signal abschickt und das "h2" ist das Ziel. Das bringt mir zum nächsten Punkt - die Verschachtelung der Lösung.
 
-# Lösung ansehen
+## Die Zeile:
+display:flex mit flex-wrap:wrap legt die Karten nebeneinander und bricht um, wenn der Platz nicht reicht. gap:18px setzt den Abstand – ohne Randmargen, die sich addieren würden. align-items:stretch sorgt dafür, dass alle Karten einer Reihe gleich hoch werden, unabhängig von der Textmenge.
 
-Die Verschachtelung funktioniert so:
-```html
+## Die Karte:
+ flex:1 1 320px ist die Kurzschreibweise für drei Werte: wachsen darf sie (1), schrumpfen auch (1), und ihre Ausgangsbreite beträgt 320 px. Zusammen mit max-width:560px ergibt das ein responsives Verhalten ohne Media Queries – auf breiten Bildschirmen zwei Karten nebeneinander, auf dem Handy eine.
+
+## Der Trick mit dem Fuß:
+Die Karte ist selbst wieder display:flex mit flex-direction:column, also eine vertikale Box. Der Fußbereich hat margin-top:auto, was den verbleibenden Leerraum komplett über ihn schiebt. Effekt: „Lösung ansehen" sitzt in allen Karten auf gleicher Höhe am unteren Rand, auch wenn die Problemtexte unterschiedlich lang sind. Die min-height-Werte (48px beim Titel, 84px beim Problemtext) machen dasselbe für die obere Hälfte.
+
+## Die Farben:
+#1C6F6A ist das Petrol dieses Kapitels. Auffällig sind die achtstelligen Varianten: #1C6F6A08 hängt zwei Stellen für die Deckkraft an – 08 sind rund 3 %, 0F etwa 6 %, 59 rund 35 %. So entstehen die zarten Hintergrundflächen und die halbtransparenten Rahmen der Schlagwort-Chips aus einer einzigen Grundfarbe, ohne zusätzliche Farbwerte definieren zu müssen.
+
+## Das Aufklappen. 
+<details> mit <summary> ist ein natives HTML-Element – der Browser übernimmt Öffnen und Schließen, Tastaturbedienung und Screenreader-Ansage von selbst. Genau deshalb funktioniert die Seite ohne eine Zeile JavaScript, was in deinem WordPress ja die entscheidende Einschränkung war.
+
+## Die Anker:
+ id="kapitel-1" ist das Ziel des Menüs oben, id="ps-1-1" das Ziel der Nummern-Chips im Register, und die Schlagwörter sind ihrerseits <a href="#tag-…"> zurück ins Register. Drei Verweisrichtungen, alle über reine Fragment-Links.
+
+Der Preis dieser Bauweise ist die Redundanz: Jede Schriftdefinition steht ausgeschrieben in jedem Element. Mit einem Stylesheet wären es 46 KB statt 400. Für die WordPress-Situation ist es trotzdem der richtige Weg.
+
+# Die Lösung ansehen - über die Verschachtelung
+
+``` html
 <details>
   <summary>Lösung ansehen</summary>   
   <div>…Inhalt…</div>                 
 </details>
 ```
-Die Regel lautet: Das erste "summary" innerhalb eines "details" ist die Beschriftung, alle übrigen Kindelemente bilden den Inhalt. "Summary" muss unter "details" stehen und nicht direkt unter "div", dann verlöre es seine Funktion und wäre nur ein Text.
+Die Regel lautet: Das erste <summary> innerhalb eines <details> ist die Beschriftung, alle übrigen Kindelemente bilden den Inhalt. Kein id, kein for, kein aria-controls nötig – der Browser leitet das aus der Struktur ab. Deshalb ist es auch wichtig, dass <summary> wirklich direkt darin steht und nicht in einem <div> verpackt ist; dann verlöre es seine Funktion und wäre nur noch Text.
 
+Beim Klick setzt der Browser das Attribut open auf das <details> und blendet den Rest ein. Genau daran wollten wir früher den Textwechsel „Weiterlesen / Weniger anzeigen" festmachen – details[open] – was ohne Stylesheet nicht ging.
 
+Das cursor:pointer im style des <summary> ist reine Kosmetik: Es macht aus dem Textcursor einen Zeigefinger. Klickbar wäre das Element auch ohne.
 
 
