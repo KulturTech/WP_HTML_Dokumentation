@@ -94,10 +94,10 @@ Die Karte ist selbst wieder display:flex mit flex-direction:column, also eine ve
 #1C6F6A ist das Petrol dieses Kapitels. Auffällig sind die achtstelligen Varianten: #1C6F6A08 hängt zwei Stellen für die Deckkraft an – 08 sind rund 3 %, 0F etwa 6 %, 59 rund 35 %. So entstehen die zarten Hintergrundflächen und die halbtransparenten Rahmen der Schlagwort-Chips aus einer einzigen Grundfarbe, ohne zusätzliche Farbwerte definieren zu müssen.
 
 ## Das Aufklappen. 
-<details> mit <summary> ist ein natives HTML-Element – der Browser übernimmt Öffnen und Schließen, Tastaturbedienung und Screenreader-Ansage von selbst. Genau deshalb funktioniert die Seite ohne eine Zeile JavaScript, was in deinem WordPress ja die entscheidende Einschränkung war.
+`<details>` mit `<summary>` ist ein natives HTML-Element – der Browser übernimmt Öffnen und Schließen, Tastaturbedienung und Screenreader-Ansage von selbst. Genau deshalb funktioniert die Seite ohne eine Zeile JavaScript, was in deinem WordPress ja die entscheidende Einschränkung war.
 
 ## Die Anker:
- id="kapitel-1" ist das Ziel des Menüs oben, id="ps-1-1" das Ziel der Nummern-Chips im Register, und die Schlagwörter sind ihrerseits <a href="#tag-…"> zurück ins Register. Drei Verweisrichtungen, alle über reine Fragment-Links.
+ id="kapitel-1" ist das Ziel des Menüs oben, id="ps-1-1" das Ziel der Nummern-Chips im Register, und die Schlagwörter sind ihrerseits `<a href="#tag-…">` zurück ins Register. Drei Verweisrichtungen, alle über reine Fragment-Links.
 
 Der Preis dieser Bauweise ist die Redundanz: Jede Schriftdefinition steht ausgeschrieben in jedem Element. Mit einem Stylesheet wären es 46 KB statt 400. Für die WordPress-Situation ist es trotzdem der richtige Weg.
 
@@ -109,11 +109,11 @@ Der Preis dieser Bauweise ist die Redundanz: Jede Schriftdefinition steht ausges
   <div>…Inhalt…</div>                 
 </details>
 ```
-Die Regel lautet: Das erste <summary> innerhalb eines <details> ist die Beschriftung, alle übrigen Kindelemente bilden den Inhalt. Kein id, kein for, kein aria-controls nötig – der Browser leitet das aus der Struktur ab. Deshalb ist es auch wichtig, dass <summary> wirklich direkt darin steht und nicht in einem <div> verpackt ist; dann verlöre es seine Funktion und wäre nur noch Text.
+Die Regel lautet: Das erste `<summary>` innerhalb eines `<details>` ist die Beschriftung, alle übrigen Kindelemente bilden den Inhalt. Kein id, kein for, kein aria-controls nötig – der Browser leitet das aus der Struktur ab. Deshalb ist es auch wichtig, dass `<summary>` wirklich direkt darin steht und nicht in einem `<div>` verpackt ist; dann verlöre es seine Funktion und wäre nur noch Text.
 
-Beim Klick setzt der Browser das Attribut open auf das <details> und blendet den Rest ein. Genau daran wollten wir früher den Textwechsel „Weiterlesen / Weniger anzeigen" festmachen – details[open] – was ohne Stylesheet nicht ging.
+Beim Klick setzt der Browser das Attribut open auf das`<details>` und blendet den Rest ein. Genau daran wollten wir früher den Textwechsel „Weiterlesen / Weniger anzeigen" festmachen – `details[open]` – was ohne Stylesheet nicht ging.
 
-Das cursor:pointer im style des <summary> ist reine Kosmetik: Es macht aus dem Textcursor einen Zeigefinger. Klickbar wäre das Element auch ohne.
+Das cursor:pointer im style des `<summary>` ist reine Kosmetik: Es macht aus dem Textcursor einen Zeigefinger. Klickbar wäre das Element auch ohne.
 
 # Die Kapitel-Chips oben
 
@@ -124,9 +124,9 @@ Die sehen wie Buttons aus, sind aber gewöhnliche Links. Verknüpft wird über d
 …
 <h2 id="kapitel-1">1. Qualitätskontrolle</h2>
 ```
-Der Text nach der Raute muss exakt dem id-Wert entsprechen, Groß- und Kleinschreibung inklusive. Der Button-Look entsteht allein durch display:inline-block plus border, padding und border-radius – ein <a> ist standardmäßig inline und würde padding sonst nur unsauber darstellen.
+Der Text nach der Raute muss exakt dem id-Wert entsprechen, Groß- und Kleinschreibung inklusive. Der Button-Look entsteht allein durch display:inline-block plus border, padding und border-radius – ein `<a>` ist standardmäßig inline und würde padding sonst nur unsauber darstellen.
 
-Nach demselben Prinzip arbeiten auch die Schlagwörter (#tag-dokumentation) und die Nummern-Chips im Register (#ps-1-1). Alle drei Verweisarten sind reine Anker – deshalb überstehen sie die KSES-Filterung, die dir <style> weggeputzt hat.
+Nach demselben Prinzip arbeiten auch die Schlagwörter (#tag-dokumentation) und die Nummern-Chips im Register (#ps-1-1). Alle drei Verweisarten sind reine Anker – deshalb überstehen sie die KSES-Filterung, die dir `<style>` weggeputzt hat.
 
 
 
