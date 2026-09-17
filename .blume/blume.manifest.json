@@ -1,0 +1,29 @@
+{
+  "blumeVersion": "1.7.0",
+  "contentRoot": "C:/Users/gsera/OneDrive/Desktop/NFDI4Memory/WP_HTML_Dokumentation/docs",
+  "output": "static",
+  "projectRoot": "C:/Users/gsera/OneDrive/Desktop/NFDI4Memory/WP_HTML_Dokumentation",
+  "routes": [
+    {
+      "alternates": [],
+      "collection": "docs",
+      "contentType": "doc",
+      "draft": false,
+      "entryId": "documentation.md",
+      "hidden": false,
+      "id": "filesystem:documentation.md",
+      "indexable": true,
+      "locale": "",
+      "path": "/documentation",
+      "source": {
+        "name": "filesystem",
+        "ref": "documentation.md"
+      },
+      "sourcePath": "C:/Users/gsera/OneDrive/Desktop/NFDI4Memory/WP_HTML_Dokumentation/docs/documentation.md",
+      "title": "Hintergrund",
+      "version": "",
+      "versionAlternates": []
+    }
+  ],
+  "version": 1
+}

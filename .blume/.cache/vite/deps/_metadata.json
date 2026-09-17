@@ -1,0 +1,74 @@
+{
+  "hash": "7d2b78a6",
+  "configHash": "56028ce2",
+  "lockfileHash": "1ba02ed4",
+  "browserHash": "359160d5",
+  "optimized": {
+    "astro > aria-query": {
+      "src": "../../../../node_modules/aria-query/lib/index.js",
+      "file": "astro_n_aria-query.js",
+      "fileHash": "6ecd42c7",
+      "needsInterop": true
+    },
+    "astro > axobject-query": {
+      "src": "../../../../node_modules/axobject-query/lib/index.js",
+      "file": "astro_n_axobject-query.js",
+      "fileHash": "62713f99",
+      "needsInterop": true
+    },
+    "astro > html-escaper": {
+      "src": "../../../../node_modules/html-escaper/esm/index.js",
+      "file": "astro_n_html-escaper.js",
+      "fileHash": "fb684580",
+      "needsInterop": false
+    },
+    "astro/runtime/client/dev-toolbar/entrypoint.js": {
+      "src": "../../../../node_modules/blume/node_modules/astro/dist/runtime/client/dev-toolbar/entrypoint.js",
+      "file": "astro_runtime_client_dev-toolbar_entrypoint__js.js",
+      "fileHash": "4465546c",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "astro-CorngH45": {
+      "file": "astro-CorngH45.js",
+      "isDynamicEntry": true
+    },
+    "audit-DiLYFlpo": {
+      "file": "audit-DiLYFlpo.js",
+      "isDynamicEntry": true
+    },
+    "highlight-DVKabrfl": {
+      "file": "highlight-DVKabrfl.js",
+      "isDynamicEntry": false
+    },
+    "icons-2UuOfa3K": {
+      "file": "icons-2UuOfa3K.js",
+      "isDynamicEntry": false
+    },
+    "rolldown-runtime-BvCyGRYZ": {
+      "file": "rolldown-runtime-BvCyGRYZ.js",
+      "isDynamicEntry": false
+    },
+    "settings-B6syP635": {
+      "file": "settings-B6syP635.js",
+      "isDynamicEntry": true
+    },
+    "toolbar-Cj6WWxKR": {
+      "file": "toolbar-Cj6WWxKR.js",
+      "isDynamicEntry": true
+    },
+    "ui-library-CUYOS91V": {
+      "file": "ui-library-CUYOS91V.js",
+      "isDynamicEntry": true
+    },
+    "window-DZGuhDk0": {
+      "file": "window-DZGuhDk0.js",
+      "isDynamicEntry": false
+    },
+    "xray-DdmD1DDv": {
+      "file": "xray-DdmD1DDv.js",
+      "isDynamicEntry": true
+    }
+  }
+}
