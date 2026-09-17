@@ -1,4 +1,10 @@
 {
+  "private": true,
+  "scripts": {
+    "dev": "blume dev",
+    "build": "blume build --base=/WP_HTML_Dokumentation",
+    "doctor": "blume doctor"
+  },
   "dependencies": {
     "blume": "^1.7.0"
   }
