@@ -8,7 +8,7 @@ description: Anleitung zum Aufbau und zur Pflege der Problem-Story-Karten in Wor
 
 Wir haben auf unserer Webseite versucht, Kärtchen zu erstellen, um Problem Storys und deren Lösungen zur Datenqualität darzustellen. Die Kärtchen sind aufklappbar und enthalten Lösungen zu den jeweiligen Problem Storys. Allerdings war es nicht möglich mit einem normalen HTML Programm zu arbeiten, da wir eine Wordpress Seite haben. Um die gängigen Styles einzubauen, müsste man Extensions kaufen, die nicht Open-Source sind. Wir arbeiten schon mit mehreren Extensions, die immer wieder aktualisiert werden müssen, deswegen habe ich einen Workaround gefunden, um die Anwendung in unsere Wordpress Seite einzubauen, d.h. *drum rolls* inline-embed. Es gibt viele solche Workarounds, aber es hängt davon ab, was für einen Format ihr euch wünscht. In dieser Dokumentation beschreibe ich wie wir die Kärtchen einbauen konnten. 
 Um den Code einzubauen, müsst ihr auf der Seite, die ihr bearbeitet, einen Block anlegen. In diesem Block, klickt ihr auch **individuelles HTML**. Ihr könnt den Quellcode von hier kopieren und in den Block einfügen.
-![HTML-Block](../img/Screenshot%202026-08-27%20112056.png)
+![HTML-Block](/blume-assets/content/img/Screenshot%202026-08-27%20112056.png)
 
 In dem Code gibt es ein Document-Object-Model (DOM). HTML ist eine statische Auszeichungssprache und ist nicht objektorientiert, d.h. es gibt kein klassisches Klassen-Objekt Modell. Es wird von dem Browser ins DOM umgewandelt. Das Objekt wäre also `<div>` oder `<details>` und die Objekte und jede Section der Seite hat eine `<Section Class>` wie z.B die Fußnoten. Es ist wichtig zu verstehen, wie das DOM funktioniert, damit man auch versteht, wie Seiten strukturiert werden.
 

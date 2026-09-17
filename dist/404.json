@@ -1,0 +1,22 @@
+{
+  "code": "PAGE_NOT_FOUND",
+  "detail": "We couldn't find the page you're looking for.",
+  "resolution": "Where to look next: /, /llms.txt, /openapi.json",
+  "status": 404,
+  "title": "Page not found",
+  "type": "about:blank",
+  "links": [
+    {
+      "href": "/",
+      "label": "Back to home"
+    },
+    {
+      "href": "/llms.txt",
+      "label": "Docs index for AI agents (llms.txt)"
+    },
+    {
+      "href": "/openapi.json",
+      "label": "JSON API description (openapi.json)"
+    }
+  ]
+}

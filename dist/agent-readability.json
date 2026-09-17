@@ -1,0 +1,22 @@
+{
+  "artifacts": {
+    "markdown": {
+      "pattern": "/{route}.md"
+    },
+    "api": {
+      "openapi": "/openapi.json",
+      "pages": "/api/docs/pages.json"
+    },
+    "llmsFullTxt": "/llms-full.txt",
+    "llmsTxt": "/llms.txt",
+    "apiCatalog": "/.well-known/api-catalog"
+  },
+  "generator": "blume@1.7.0",
+  "name": "Documentation",
+  "site": null,
+  "contentUsage": {
+    "search": true,
+    "ai-input": true,
+    "ai-train": true
+  }
+}

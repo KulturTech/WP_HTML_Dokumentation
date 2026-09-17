@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "/api/docs",
+      "service-desc": [
+        {
+          "href": "/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "/",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

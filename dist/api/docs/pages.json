@@ -1,0 +1,17 @@
+{
+  "count": 1,
+  "generator": "blume@1.7.0",
+  "pages": [
+    {
+      "contentType": "doc",
+      "json": "/api/docs/pages/documentation.json",
+      "lastModified": null,
+      "locale": "",
+      "markdownUrl": "/documentation.md",
+      "route": "/documentation",
+      "title": "Hintergrund",
+      "url": "/documentation"
+    }
+  ],
+  "site": null
+}

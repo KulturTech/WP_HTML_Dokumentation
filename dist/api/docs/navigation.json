@@ -1,0 +1,16 @@
+{
+  "actions": [],
+  "cta": null,
+  "featured": [],
+  "root": "/",
+  "selectors": [],
+  "sidebar": [
+    {
+      "kind": "page",
+      "label": "Hintergrund",
+      "pageId": "filesystem:documentation.md",
+      "route": "/documentation"
+    }
+  ],
+  "tabs": []
+}

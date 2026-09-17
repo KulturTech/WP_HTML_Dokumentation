@@ -1,31 +1,31 @@
 {
-  "hash": "7d2b78a6",
-  "configHash": "56028ce2",
+  "hash": "e3a68e51",
+  "configHash": "6805decd",
   "lockfileHash": "1ba02ed4",
-  "browserHash": "359160d5",
+  "browserHash": "afbd48ab",
   "optimized": {
     "astro > aria-query": {
       "src": "../../../../node_modules/aria-query/lib/index.js",
       "file": "astro_n_aria-query.js",
-      "fileHash": "6ecd42c7",
+      "fileHash": "242d8578",
       "needsInterop": true
     },
     "astro > axobject-query": {
       "src": "../../../../node_modules/axobject-query/lib/index.js",
       "file": "astro_n_axobject-query.js",
-      "fileHash": "62713f99",
+      "fileHash": "2e341593",
       "needsInterop": true
     },
     "astro > html-escaper": {
       "src": "../../../../node_modules/html-escaper/esm/index.js",
       "file": "astro_n_html-escaper.js",
-      "fileHash": "fb684580",
+      "fileHash": "331a6005",
       "needsInterop": false
     },
     "astro/runtime/client/dev-toolbar/entrypoint.js": {
       "src": "../../../../node_modules/blume/node_modules/astro/dist/runtime/client/dev-toolbar/entrypoint.js",
       "file": "astro_runtime_client_dev-toolbar_entrypoint__js.js",
-      "fileHash": "4465546c",
+      "fileHash": "dccfabde",
       "needsInterop": false
     }
   },
