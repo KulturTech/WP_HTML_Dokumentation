@@ -13,6 +13,7 @@ export default defineConfig({
   publicDir: "C:/Users/gsera/OneDrive/Desktop/NFDI4Memory/WP_HTML_Dokumentation/public",
   cacheDir: "C:/Users/gsera/OneDrive/Desktop/NFDI4Memory/WP_HTML_Dokumentation/.blume/.cache/astro",
   output: "static",
+  site: "http://localhost:4321",
   fonts: [{ provider: fontProviders.google(), name: "Inter", cssVariable: "--blume-ff-inter", weights: ["400 700"], subsets: ["latin"], fallbacks: ["ui-sans-serif","system-ui","sans-serif"] }, { provider: fontProviders.google(), name: "IBM Plex Mono", cssVariable: "--blume-ff-ibm-plex-mono", weights: [400,500,600], subsets: ["latin"], fallbacks: ["ui-monospace","SF Mono","Menlo","monospace"] }],
   integrations: [mdx({ processor: blumeMdxProcessor({"basePath":"","codeThemes":{"dark":"github-dark","light":"github-light"},"contentRoot":"C:/Users/gsera/OneDrive/Desktop/NFDI4Memory/WP_HTML_Dokumentation/docs","deployBase":"","headingAnchors":true}) }), blumeIntegration({"pages":[]})],
   markdown: {

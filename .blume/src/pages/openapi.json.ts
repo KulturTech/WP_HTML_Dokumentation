@@ -769,7 +769,7 @@ const payload = {
   "servers": [
     {
       "description": "Documentation",
-      "url": "/"
+      "url": "http://localhost:4321"
     }
   ],
   "tags": [
@@ -789,7 +789,11 @@ const payload = {
       "description": "Agent discovery documents.",
       "name": "Discovery"
     }
-  ]
+  ],
+  "externalDocs": {
+    "description": "Documentation documentation",
+    "url": "http://localhost:4321/"
+  }
 };
 
 export function GET() {

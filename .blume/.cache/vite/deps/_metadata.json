@@ -1,31 +1,55 @@
 {
-  "hash": "e3a68e51",
-  "configHash": "6805decd",
+  "hash": "de9d1a61",
+  "configHash": "3dc1debc",
   "lockfileHash": "1ba02ed4",
-  "browserHash": "afbd48ab",
+  "browserHash": "1c6d6692",
   "optimized": {
     "astro > aria-query": {
       "src": "../../../../node_modules/aria-query/lib/index.js",
       "file": "astro_n_aria-query.js",
-      "fileHash": "242d8578",
+      "fileHash": "c415ccf2",
       "needsInterop": true
     },
     "astro > axobject-query": {
       "src": "../../../../node_modules/axobject-query/lib/index.js",
       "file": "astro_n_axobject-query.js",
-      "fileHash": "2e341593",
+      "fileHash": "c54d2eba",
       "needsInterop": true
     },
     "astro > html-escaper": {
       "src": "../../../../node_modules/html-escaper/esm/index.js",
       "file": "astro_n_html-escaper.js",
-      "fileHash": "331a6005",
+      "fileHash": "75df4359",
       "needsInterop": false
     },
     "astro/runtime/client/dev-toolbar/entrypoint.js": {
       "src": "../../../../node_modules/blume/node_modules/astro/dist/runtime/client/dev-toolbar/entrypoint.js",
       "file": "astro_runtime_client_dev-toolbar_entrypoint__js.js",
-      "fileHash": "dccfabde",
+      "fileHash": "cc5264bb",
+      "needsInterop": false
+    },
+    "astro/virtual-modules/transitions-events.js": {
+      "src": "../../../../node_modules/blume/node_modules/astro/dist/virtual-modules/transitions-events.js",
+      "file": "astro_virtual-modules_transitions-events__js.js",
+      "fileHash": "61291819",
+      "needsInterop": false
+    },
+    "astro/virtual-modules/transitions-router.js": {
+      "src": "../../../../node_modules/blume/node_modules/astro/dist/virtual-modules/transitions-router.js",
+      "file": "astro_virtual-modules_transitions-router__js.js",
+      "fileHash": "868eb27c",
+      "needsInterop": false
+    },
+    "astro/virtual-modules/transitions-swap-functions.js": {
+      "src": "../../../../node_modules/blume/node_modules/astro/dist/virtual-modules/transitions-swap-functions.js",
+      "file": "astro_virtual-modules_transitions-swap-functions__js.js",
+      "fileHash": "faa51cd1",
+      "needsInterop": false
+    },
+    "astro/virtual-modules/transitions-types.js": {
+      "src": "../../../../node_modules/blume/node_modules/astro/dist/virtual-modules/transitions-types.js",
+      "file": "astro_virtual-modules_transitions-types__js.js",
+      "fileHash": "f812e862",
       "needsInterop": false
     }
   },
@@ -37,6 +61,10 @@
     "audit-DiLYFlpo": {
       "file": "audit-DiLYFlpo.js",
       "isDynamicEntry": true
+    },
+    "events-B6K6I7ZH": {
+      "file": "events-B6K6I7ZH.js",
+      "isDynamicEntry": false
     },
     "highlight-DVKabrfl": {
       "file": "highlight-DVKabrfl.js",
@@ -53,6 +81,10 @@
     "settings-B6syP635": {
       "file": "settings-B6syP635.js",
       "isDynamicEntry": true
+    },
+    "swap-functions-Dod-PU98": {
+      "file": "swap-functions-Dod-PU98.js",
+      "isDynamicEntry": false
     },
     "toolbar-Cj6WWxKR": {
       "file": "toolbar-Cj6WWxKR.js",
